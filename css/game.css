@@ -1,0 +1,31 @@
+.background    { /*background: rgb(77, 50, 77)*/;
+	             background: purple;
+				 width:  25px;
+                 height: 25px;
+                 background: url(bgbrick.jpg); 
+                 table-layout: fixed;
+                 border-spacing: 0;}
+.background td { padding: 0;}
+.lava          { background: orange;
+				 width:  25px;
+                 height: 25px;
+                 background: url(lavabrick.jpg);/*background: height: 250px;
+    			 background: orange; 
+   				 background: -webkit-linear-gradient(orange, red);
+                 background: -o-linear-gradient(orange, red);
+                 background: -moz-linear-gradient(orange, red);
+                 background: linear-gradient(orange, red);*/
+				 /*background-repeat: repeat-x;*/}
+.wall          { background: gray;
+				 width:  25px;
+                 height: 25px;
+                 background: url(wallbrick.jpg);
+				 /*background-image: url("link");*/}
+.floater       { background: green;
+				 width:  25px;
+                 height: 25px;
+                 background: url(floaterbrick.jpg);}
+
+.game {
+  position: relative;
+}
