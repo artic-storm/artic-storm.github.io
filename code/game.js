@@ -29,6 +29,10 @@ function Level(plan) {
         fieldType = "lava";
       else if (ch == "y")
 		 fieldType = "floater"
+	  else if (ch == "c")
+		 fieldType = "coin"
+	  else if (ch == "g")
+		 fieldType = "ruby"
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
     }
@@ -59,7 +63,7 @@ function Player(pos) {
   this.speed = new Vector(0, 0);
 }
 Player.prototype.type = "player";
-
+//Coin.prototype.type = "coin";
 // Helper function to easily create an element of a type provided 
 // and assign it a class.
 function elt(name, className) {
@@ -209,22 +213,23 @@ Player.prototype.moveY = function(step, level, keys) {
   var motion = new Vector(0, this.speed.y * step);
   var newPos = this.pos.plus(motion); 	
   var obstacle = level.obstacleAt(newPos, this.size);
-  if (obstacle){
+  if (obstacle == 'wall'){
+	  //console.log(obstacle);
 	  if (keys.up && this.speed.y > 0)
 	  	this.speed.y = -jumpSpeed;
   	  else
 	  	this.speed.y = 0;
-	} else {
+	} 
+	else if (obstacle == 'lava') {
+		console.log('You Died');
+		this.pos = new Vector (4, 15);
+	}
+	else {
 		this.pos = newPos;
 	  }
 };
 
-// TODO I can't figure out what I'm missing, this code is over my head. I've spent over 5 hours trying to figure this code out, nothing I try works, and I don't understand why.	
 
-/*if (obstacle == 'lava') {
-		alert("You Died");
-		this.Pos = (10, 10);
-	}*/
 
 Player.prototype.act = function(step, level, keys) {
   this.moveX(step, level, keys);

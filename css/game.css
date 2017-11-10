@@ -11,9 +11,13 @@
 				 /*background-image: url("link");*/}
 .floater       { background: green;
                  background: url(floaterbrick.jpg);}
+.coin          { background: yellow;
+                 background: url(coinpickup.png);}
+.ruby          { background: red;
+                 background: url(rubypickup.png);}
 .actor  	   { position: absolute;}
-.player 	   { background: rgb(64, 64, 64);}
-
+.player 	   { background: rgb(64, 64, 64);
+				 background: url(playermodel.png);}
 .game		   {
   				 overflow: hidden;
   				 max-width: 600px;
